@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='text']{
+            border:  2px solid blue;
+        }
+
+        /* starts with */
+        /* a[href^="https"]{
+            color: green;
+        } */
+
+        /* ends with */
+
+        /* a[href$=".com"]{
+            color: green;
+        } */
+
+        /* contains */
+
+        a[href*="google"]{
+            color: green;
+        }
+
+        button:hover{
+            background-color: blue;
+            color: white;
+        }
+
+        input:focus{
+            border: 2px solid green;
+        }
+
+        /* p::first-letter{
+            font-size: 30px;
+            color: red;
+        } */
+
+        p::before{
+            content: "->";
+        }
+
+
+        p::after{
+            content: "...";
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    <input type="text" placeholder="Name">
+    <input type="password`" placeholder="Password">
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    <a href="https://google.com">Secure Link</a>
+    <a href="http://example.com">Normal Link</a>
+    <br> <br> <br> <br> <br> <br> <br> <br>
+ -->
+
+    <!-- 
+    
+    Style:
+
+        All inputs with type="email" → green border
+        All links ending in .jpg → orange
+            
+        input[type="email"] {
+            border: 2px solid green;
+        }
+
+        a[href$=".jpg"] {
+            color: orange;
+        }        
+    
+    -->
+
+
+    <!-- 
+        Psuedo classes -> State of element
+
+        examples:
+        hovered
+        Clicked
+        First child
+
+
+        Psuedo elelemtn -> Part of the element
+
+        examples:
+        first letter
+        before content
+        after content
+    
+    -->
+
+    
+    <!-- <button>Click me</button>
+    <input type="text" placeholder="Name">
+    <input type="password`" placeholder="Password"> -->
+
+
+    <p>Hello world</p>
+
+    
+</body>
+</html>

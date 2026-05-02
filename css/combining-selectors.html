@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* p.highlight{
+            color: purple;
+        } */
+
+      /* h1, p{
+            color: bisque;
+        } */
+
+      /* div span{
+            color: brown;
+        } */
+
+      /* direct child */
+      div > span {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p class="highlight">styled</p>
+    <div class="highlight">Not styled</div>
+    <p>not styled</p> -->
+
+    <!-- using , separator -->
+    <!-- <h1>
+        Title
+    </h1>
+    <p>Paragraph</p> -->
+
+    <!-- descendant selectors (space) -->
+
+    <div>
+      <p>
+        <span> Inside p tag </span>
+      </p>
+    </div>
+
+    <p>Outside div</p>
+
+    <div>
+      <span> Inside div </span>
+    </div>
+  </body>
+</html>
