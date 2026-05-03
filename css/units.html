@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    html{
+        font-size: 18px;
+    }
+      .one-em {
+        font-size: 2em;
+      }
+
+      .one-rem {
+        font-size: 2rem;
+      }
+
+      .parent{
+        border: 2px solid black;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    Units
+
+    <div class="one-em">1em</div>
+    <div class="one-rem">1rem</div>
+    <div>16px</div>
+
+    <div class="parent">
+        <div class="one-em">1em</div>
+        <div class="one-rem">1rem</div>
+        <div style="font-size: 16px;">16px</div>
+    </div>
+  </body>
+</html>
