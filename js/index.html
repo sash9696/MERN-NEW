@@ -1,274 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Hello world</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut perferendis eaque tenetur, aspernatur id neque quod sapiente laudantium ipsam vitae in maiores reprehenderit voluptates. Modi molestias cumque dolores? Exercitationem, necessitatibus!</p>
-    
+  </head>
+  <body>
+    <h1>Objects and Arrays</h1>
+
     <script>
-        // console.log('A')
-        // console.log('B')
-        // console.log('C')
-        // console.log(2+2)
+      // const user = {
+      //     name:'John',
+      //     age:30
+      // }
 
-        /* 
-        multi line comment
-        */
+      // const key = 'age'
+      // console.log(user.name)
+      // console.log(user[key])
 
-        // variable are a named container to store some data
+      // delete user.age
 
-        // let username; declaration
-        // username = 'John'  initialization
+      // const user = {
+      //     name:'John',
+      //     age:30,
+      //     greet(){
+      //         console.log('Hello')
+      //     }
+      // }
 
-        // let username = 'John';
-        // username = 20;
+      // // user.greet();
+      // console.log(Object.keys(user))
+      // console.log(Object.values(user))
+      // [value1,value1,value3]
 
-        // let age = 30;
+      // console.log(Object.entries(user))
 
+      // [
+      //     [key1,value1]
+      // ]
 
-        // 3 ways to create a variable in js , let var and const
+      // // for in
 
-        // let score  =10;
-        // score = 20;
+      // for(let key in user){
+      //     console.log(key,user[key])
 
+      // }
 
-        // const country = 'India';
-        // country = 'USA'
-        // constant variables cannot be reassigned
+      // Arrays
 
+      // const nums = [10,20,30];
 
-        //var => old way
+      // console.log(nums.length)
 
-        // var message = 'hello';
-        // var message = 'greetings';
-        // console.log(message)
+      // for(let i = 0; i < nums.length; i++){
+      //     console.log(nums[i])
+      // }
 
+      // for(let num of nums){
+      //     console.log(num)
+      // }
 
-        // console.log(message)
-        // let message = 'hello';
+      // it does not create a new array
+      // nums.forEach(function(value,index, array){
+      //     console.log(value, index, array)
+      // });
 
+      // map
+      // new array
 
-        // console.log(message)
-        // var message = 'hello';
+      // transform the array
 
-        // data types -> 8
+    //   const nums = [10, 20, 30];
 
-        // primitive data types
-        // "hello" -> String
-        // 123 -> Number
-        // true ->  Boolean
-        // null
-        // undefined
+      //   function transform(num, index, array) {
+      //     return num * 2;
+      //   }
 
+      //   const doubled = nums.map(function (num, index, array) {
+      //     return num * 2;
+      //   });
 
-        // String
-        // const username = 'John';
-        // // const username = "John";
-        // // const username = `John`;
+      // const doubled = nums.map(transform);
 
-        // console.log('Hello ' + username )
+    //   const doubled = nums.map((num) => num * 2);
 
-        // console.log(`Hello  ${username}`)
 
-        // const a  = 10;
-        // const b = 20;
-        // console.log(`The sum of a and b is: ${a + b}`)
+    // filter
 
+    // const nums = [1, 2, 3, 4,5];
 
-        // Number
 
-        // const age = 25;
-        // const price  = 99.99;
-        // const temperature = -5;
+    // const even = nums.filter(num => num % 2 === 0);
 
-        // console.log(typeof 99.99)
+    // search, filter products, completed todos
 
-        // console.log('5' + '1')
-        // console.log('5' + 1)
+    // find
+    // returns first matching element
 
-        // type coercion
+    // const result = nums.find(function(num){
+    //     return num > 2
+    // })
 
-        // Boolean
-        // const isLoggedIn = true;
-        // const hasPermission = false;
+    // some
+    // check if atleast one item matches. returns boolean
 
-        //undefined
 
-        // value has not been asssigned yet
+    // const result = nums.some(function(num){
+    //     return num > 3
+    // })
 
-        console.log(message);
-        var message = 'hello';
+    // every
 
-        // Null
+    // const result = nums.every(function(num){
+    //     return num > 0
+    // })
 
-        // intentionally empty
+    
 
-        // const selectedUser = null;
 
-        // console.log(typeof null)
+    // reduce 
+    //really powerful
 
+    // const nums = [1,2,3,4,5];
 
-        
+    // const total = nums.reduce(function(accumulator, current, array){
+    //     // console.log(accumulator, current,array)
+    //     // accumulator = accumulator + current;
 
+    //     return accumulator + current
+    // }, 0)
 
-        // bigint
-        // -(2^53-1) to (2^53-1)
+    // accumulator = 0
+    // 0 + 1 = 1
+    // 1 + 2 = 3
+    // 3 + 3 = 6
+    // ...
 
-        // const bigNumber = 48237428347982749823749237492347928374723894798237492379n;
-        // console.log(typeof bigNumber)
-        // console.log(bigNumber)
+    // mutating methods
 
+    //changes the original array
 
-        // non primitve types
+    // push
+    // pop
+    // shift
+    // unshit
+    // splice
 
-    // Objects
-    // key value pairs
 
-    // const user = {
-    //     name:'John',
-    //     age:20
-    // };
+    // non mutating methods
+    // return new arrays
+    // map
+    // filter
+    // slice
 
-    // console.log(user.name)
-    // console.log(user['age'])
+// end of the array 
+// push and pop
 
-    // // they are mutuable
-    // user.age = 30
+// starting of the array
+// shift and unshift
 
-    // console.log(user)
+    // const nums = [1,2,3,4,5];
 
-    // api responses
-    //users
-    //products
+    // const removed = nums.shift();
 
+    // nums.unshift(100)
 
-    // Arrays
+    // slice
+    // shallow copy
+    // does not mutuate the original array
+    // array.slice(start, end)
 
-    // ordered collection
+    // const result = nums.slice(1,4);
+    // const result = nums.slice(1);
 
-    // const nums = [10,20,30,40];
+    // const result = nums.slice(-2);
 
-    // // console.log(nums[0])
 
-    // // console.log(nums[2])
+    // const copy = nums.slice();
 
-    // // nums[999] = 'hello'
 
-    // console.log(nums.pop())
+    // splice
+    // remove,add, replace
+    // mutate the original array
 
-    // nums.push(100)
 
-    // console.log(typeof [])
+    // const nums = [1,2,3,4,5];
 
-    // functions
+    // // array.splice(start, deleteCount)
 
-    // function greet(){
-    //     console.log('hello world')
-    // }
+    // // nums.splice(1,2);
+    
+    // //   [1,4,5];
 
-    // greet();
+    // // nums.splice(1,0,"a","b");
 
+    // nums.splice(1,1,100)
 
-    // function greet(name, age){
-    //     console.log(`hello ${name}`)
-    // }
 
-    // greet('John', 20); //argument
 
+    // concat
+    // const a = [1,2];
+    // const b = [3,4];
 
-    // prmitive type
-    //symbol
+    // const result = a.concat(b)
 
-    // guranteed to be unique
-    // const a = Symbol();
-    // const b = Symbol();
 
+    // join
 
-    // console.log(a === b)
+    // convert array into string
 
+    // const words = ['hello', 'world'];
 
+    // // console.log(words.join(", "))
+    // words.reverse()
 
-    // Functions
 
-    // function declaration
+    // sort
 
-     // function greet(name, age){
-    //     console.log(`hello ${name}`)
-    // }
+    // const names = ['Raj', "Ajay", 'Zen']
 
-    // greet('John', 20); //argument
+    // names.sort();
+    // console.log(names)
 
-    // function expression
+    // const nums = [1,10,2];
 
-    //named function expression
-        // const greet = function sayHi (){
-    //     console.log('Hello')
-    // }
+    // nums.sort();
 
-     //un named function expression
-    // const greet = function (){
-    //     console.log('Hello')
-    // }
+    // console.log(nums)
 
-    // greet();
+    // internally sort converts values to string
 
-    // callback function
+    // for numeric sort use a compare function
 
-    // function x(cb){
+    // nums.sort(function(a,b){
+    //     // console.log(a,b)
+    //     return b - a
+    // })
+    // intrnally it check is a - b < 0 then a comes first
 
-    //     console.log(10)
-    //     cb();
 
-    // }
+        // const names = ['Raj', "Ajay", 'Zen'];
 
-    // function y(){
-    //     console.log(20)
-    // }
+        // names.sort(function (a,b) {
+        //     // console.log(a,b)
+        //    return b.localeCompare(a)
+        // })
 
-    // x(y);
+        // b.localeCompare(a)
+        // Ajay , Zen
+        //if  a.localeCompare(b) retuens negative value then Ajay will come first
 
-    // anonymous functions
-    //fucntion without name
+        // decending
+        // b.localeCompare(a) returns positive , order in opposite direction
 
-    // arrow functions
-    //    const greet = () => console.log('Hello');
-    //     greet();
 
+        // References in Object & Arrays
 
-    // function add(a,b){
-    //     return a + b
-    // }
+        // memory
+        // primitive 
 
+        // pass by values string, numbers, boolean, null etc
+        // actual value is stored directly
 
-    // arrow function
-//     const add = (a,b) =>  a + b;
 
-//    console.log(add(10,20));
+        //non primitive
+        // objects , arrays , functions
+        // memory address/reference is stored
 
+        // let a = 10;
 
-// IIFE => immediately invoke function expression
+        // let b = a;
 
-//  (function(){
-//     console.log('Runs Immediately')
-//  })()
 
 
 
-// Higher order function
+        // const user1 = {
+        //     name:'John',
 
-// function greet(callback){
-//     callback()
-// }
+        // }
 
-// callback=> callback function
-// greet => Higher order function
+        // const user2 = user1;
+
+        // user2.name = 'Peter'
+
+        // console.log(user1.name)
+
+        // let x = 10;
+
+        // function changeValue (value){
+        //     value = 20;
+        // }
+
+        // changeValue(x);
+        // console.log(x);
+
+        // shallow copy
+
+        // const user1 = {
+        //     name:'John'
+        // }
+
+        // // spread operator
+
+        // const user2  = {...user1};
+
+        // user2.name = "Peter"
+        // console.log(user1)
+
+
+        const user1 = {
+            name:'John',
+            address:{
+                city:'Delhi'
+            }
+        }
+
+        // spread operator
+
+        // shallow copy
+        // const user2  = {...user1};
+
+        // deep copy
+        // const user2  = {...user1, address:{...user1.address}};
+
+        // user2.address.city = "Mumbai"
+        // console.log(user1.address.city)
+
+        // deep copy
+        // older method 
+
+        // const user2   = JSON.parse(JSON.stringify(user1));
+        // it has limitiations it will loses undefined , symbols, Date, functions
+        //        user2.address.city = "Mumbai"
+        // console.log(user1.address.city)
+
+               
+        const user2   = structuredClone(user1); //deep copy
+        user2.address.city = "Mumbai"
+        console.log(user1.address.city)
 
 
 
     </script>
-</body>
+  </body>
 </html>
