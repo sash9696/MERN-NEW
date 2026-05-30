@@ -45,7 +45,7 @@ heavyBtn.addEventListener("click", () => {
     worker.postMessage("start");
 
     worker.onmessage = function(e){
-        console.log('worker finished', e);
+        console.log('worker finished', e.data);
 
         worker.terminate();
     }
