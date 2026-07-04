@@ -1,25 +1,40 @@
-import { useSelector } from "react-redux";
-import Product from "./components/Product";
-import Cart from "./components/Cart";
-import Login from "./components/Login";
-import Header from "./components/Header";
-import "./App.css";
+import React, { Suspense } from "react";
+import { Link, Routes, Route } from "react-router-dom";
+// import Home from "./pages/Home";
+// // import Products from "./pages/Products";
+// import Admin from "./pages/Admin";
+
+
+const Admin = React.lazy(() => import("./pages/Admin"))
+const Products = React.lazy(() => import("./pages/Products"))
+const Home = React.lazy(() => import("./pages/Home"))
+
 
 function App() {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
-  if (!isAuthenticated) {
-    return <Login />;
-  }
-
   return (
-    <div className="app">
-      <Header />
-      <main className="main-content">
-        <Product />
-        <Cart />
-      </main>
-    </div>
+    <>
+      <nav
+        style={{
+          display: "flex",
+          gap: "20px",
+          marginBotto: "20px",
+        }}
+      >
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/admin">Admin</Link>
+
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/admin" element={<Admin />} />
+
+
+        </Routes>
+      </Suspense>
+      </nav>
+    </>
   );
 }
 
