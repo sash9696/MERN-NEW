@@ -1,26 +1,29 @@
 import * as notesService from "../services/notes.services.js";
-export const getAllNotes = (req, res) => {
-  const notes = notesService.getAllNotes();
+export const getAllNotes = async (req, res) => {
+  const notes = await notesService.getAllNotes();
   res.json(notes);
 };
 
-export const getNoteById = (req, res) => {
+export const getNoteById = async (req, res) => {
+  
   console.log(req.params);
   const id = Number(req.params.id);
 
-  const note = notesService.getNoteById(id);
+  const note = await notesService.getNoteById(id);
 
   if (!note) {
     return res.status(404).json({
-      message: "Note not foind",
+      message: "Note not found",
     });
   }
   res.json(note);
 };
 
-export const createNote = (req, res) => {
+export const createNote = async (req, res) => {
+    console.log('controller');
+
   console.log(req.body);
 
-  const note = notesService.createNote(req.body.title);
+  const note = await notesService.createNote(req.body.title);
   res.status(201).json(note);
 };

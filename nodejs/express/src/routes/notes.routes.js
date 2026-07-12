@@ -1,5 +1,6 @@
 import express from "express";
 import { getAllNotes,getNoteById,createNote } from "../controllers/notes.controller.js";
+import { isAdmin } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
